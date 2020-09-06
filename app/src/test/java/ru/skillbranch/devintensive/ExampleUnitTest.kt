@@ -4,6 +4,7 @@ import org.junit.Test
 import ru.skillbranch.devintensive.extensions.format
 import ru.skillbranch.devintensive.extensions.toUserView
 import ru.skillbranch.devintensive.models.*
+import ru.skillbranch.devintensive.utils.Util
 import java.util.*
 
 class ExampleUnitTest {
@@ -31,5 +32,11 @@ class ExampleUnitTest {
             is TextMessage -> println("Text")
             is ImageMessage -> println("Image")
         }
+    }
+
+    @Test
+    fun test_toInitials_method() {
+        val test = Util.toInitials(null, "Kaffka")
+        print(test)
     }
 }

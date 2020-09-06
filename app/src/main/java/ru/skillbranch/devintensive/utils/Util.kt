@@ -1,5 +1,7 @@
 package ru.skillbranch.devintensive.utils
 
+import java.util.*
+
 object Util {
 
     fun parseFullName(fullName: String?) : Pair<String?, String?> {
@@ -23,6 +25,44 @@ object Util {
     }
 
     fun toInitials(firstName: String?, lastName: String?): String? {
-        return ""
+        val result: StringBuffer = StringBuffer()
+
+        if (
+            firstName != null
+            && firstName != ""
+            && firstName != " "
+            && lastName != null
+            && lastName != ""
+            && lastName != " "
+        ) {
+            result.append(firstName[0].toString().toUpperCase(Locale.ROOT))
+            result.append(lastName[0].toString().toUpperCase(Locale.ROOT))
+
+        } else if (
+            (firstName == null
+            || firstName == ""
+            || firstName == " ")
+            &&
+            (lastName != null
+            && lastName != ""
+            && lastName != " ")
+        ) {
+            result.append(lastName[0].toString().toUpperCase(Locale.getDefault()))
+
+        } else if (
+            (firstName == null || firstName == "" || firstName == " ")
+            && (lastName == null || lastName == "" || lastName == " ")
+        ) {
+            result.append("null")
+
+        } else if (
+            (firstName != null && firstName != "" && firstName != " ")
+            &&
+            (lastName == null || lastName == "" || lastName == " ")
+        ) {
+            result.append(firstName[0].toString().toUpperCase(Locale.getDefault()))
+        }
+
+        return result.toString()
     }
 }
