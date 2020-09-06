@@ -21,7 +21,7 @@ abstract class BaseMessage (
             date: Date = Date(),
             type: String = "text",
             payload: Any?) : BaseMessage {
-           lastId++
+            lastId++
 
             return when (type) {
                 "image" -> ImageMessage(

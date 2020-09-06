@@ -40,12 +40,12 @@ object Util {
 
         } else if (
             (firstName == null
-            || firstName == ""
-            || firstName == " ")
+                    || firstName == ""
+                    || firstName == " ")
             &&
             (lastName != null
-            && lastName != ""
-            && lastName != " ")
+                    && lastName != ""
+                    && lastName != " ")
         ) {
             result.append(lastName[0].toString().toUpperCase(Locale.getDefault()))
 

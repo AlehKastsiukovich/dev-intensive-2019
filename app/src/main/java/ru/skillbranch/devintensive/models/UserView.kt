@@ -10,7 +10,7 @@ class UserView(
 ) {
 
     fun printMe() {
-       println("""
+        println("""
         id: $id 
         fullName: $fullName
         nickName: $nickName
